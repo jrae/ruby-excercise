@@ -38,7 +38,6 @@ describe FinancialSummary do
   end
 
   it 'summarizes over lifetime' do
-    pending('Not implemented yet')
 
     user = create(:user)
 
