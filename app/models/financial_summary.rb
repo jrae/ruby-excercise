@@ -36,6 +36,7 @@ class FinancialSummary
   end
 
   def self.all_transactions(args)
+    # raise StandardError, 'Must provide currency to obtain financial summary' if args[:currency].blank?
     Transaction.where(
       user: args[:user],
       amount_currency: args[:currency].to_s.upcase
