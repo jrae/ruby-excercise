@@ -15,6 +15,16 @@ class FinancialSummary
     )
   end
 
+  def self.seven_days(args)
+    new(
+      Transaction.where(
+        user: args[:user],
+        amount_currency: args[:currency].to_s.upcase
+      ).days_before(Time.zone.now, 7)
+    )
+  end
+
+
   def within_category(cat)
     @transactions.where(category: cat)
   end

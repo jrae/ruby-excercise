@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe FinancialSummary do
   it 'summarizes over one day' do
-    # pending('Not implemented yet')
 
     user = create(:user)
 
@@ -21,7 +20,6 @@ describe FinancialSummary do
   end
 
   it 'summarizes over seven days' do
-    pending('Not implemented yet')
 
     user = create(:user)
 
