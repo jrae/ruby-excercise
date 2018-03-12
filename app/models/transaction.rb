@@ -9,6 +9,10 @@ class Transaction < ApplicationRecord
   after_save :make_immutable
   after_find :make_immutable
 
+  scope :days_before, -> (end_time, num_of_days) {
+    where('created_at BETWEEN ? and ?', end_time - num_of_days.days, end_time)
+  }
+
   private
 
   def must_be_greater_than_zero
